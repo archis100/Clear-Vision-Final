@@ -10,10 +10,10 @@ Clear Vision is a deep learning project for **image restoration**. It aims to re
 
 *Sample Output (screenshot):*
 ![Clear Vision Sample](assets/demo_screenshot1.jpg)
+---
 
 *Pix2Pix retains the maximum structural similarity and works the handles occlusion the best among the 3 models (screenshot):*
 ![Clear Vision Sample](assets/demo_screenshot2.jpg)
-
 ---
 
 ## Table of Contents
