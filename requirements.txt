@@ -1,0 +1,11 @@
+flask
+torch
+torchvision
+Pillow
+numpy
+opencv-python
+kaggle
+tqdm
+tensorflow
+requests
+scikit-learn

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clear Vision</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title-3d">Clear Vision</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            <label for="image">Upload a degraded image:</label>
+            <input type="file" name="image" id="image" required>
+
+            <label for="model">Choose a model:</label>
+            <select name="model" id="model" required>
+                <option value="vae">VAE</option>
+                <option value="wgan">WGAN</option>
+                <option value="pix2pix">PIX2PIX</option>
+                <option value="all">All</option>
+            </select>
+
+            <button type="submit">Restore Image</button>
+        </form>
+
+        {% if selected_model and selected_model != 'all' %}
+        <h2>{{ selected_model | upper }}</h2>
+        <div class="image-row">
+            <div class="image-box">
+                <p><strong>Degraded</strong></p>
+                {% if degraded_image %}
+                <img src="{{ url_for('static', filename='outputs/degraded/' + degraded_image) }}" alt="Degraded Image">
+                {% endif %}
+            </div>
+            <div class="image-box">
+                <p><strong>Ground Truth</strong></p>
+                {% if ground_truth_image %}
+                <img src="{{ url_for('static', filename='uploads/' + ground_truth_image) }}" alt="Ground Truth Image">
+                {% endif %}
+            </div>
+            <div class="image-box">
+                <p><strong>Restored</strong></p>
+                {% if restored_images[selected_model] %}
+                <img src="{{ url_for('static', filename='outputs/restored/' + restored_images[selected_model]) }}" alt="Restored Image">
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if selected_model == 'all' %}
+        {% for model in restored_images %}
+        <h2>{{ model | upper }}</h2>
+        <div class="image-row">
+            <div class="image-box">
+                <p><strong>Degraded</strong></p>
+                {% if degraded_image %}
+                <img src="{{ url_for('static', filename='outputs/degraded/' + degraded_image) }}" alt="Degraded Image">
+                {% endif %}
+            </div>
+            <div class="image-box">
+                <p><strong>Ground Truth</strong></p>
+                {% if ground_truth_image %}
+                <img src="{{ url_for('static', filename='uploads/' + ground_truth_image) }}" alt="Ground Truth Image">
+                {% endif %}
+            </div>
+            <div class="image-box">
+                <p><strong>Restored</strong></p>
+                {% if restored_images[model] %}
+                <img src="{{ url_for('static', filename='outputs/restored/' + restored_images[model]) }}" alt="Restored Image for {{ model }}">
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+CVenv/
+venv/
+env/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# # Model weights / large files handled by LFS
+# *.pth
+# *.pt
+# *.pb
+# models/pix2pix/variables/
+
+# OS files
+.DS_Store
+Thumbs.db
