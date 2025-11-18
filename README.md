@@ -24,7 +24,6 @@ Clear Vision is a deep learning project for **image restoration**. It aims to re
 - [Architecture](#architecture)
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
-- [Models](#models)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
 - [Acknowledgements](#acknowledgements)
