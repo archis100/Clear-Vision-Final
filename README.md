@@ -4,7 +4,7 @@ Clear Vision is a deep learning project for **image restoration**. It aims to re
 
 ---
 
-## 🚀 Deployed Demo
+## Deployed Demo
 
 *Currently, the project is designed for local inference. Future deployment on web platforms like Streamlit or Hugging Face Spaces is possible.*
 
